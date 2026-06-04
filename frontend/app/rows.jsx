@@ -127,20 +127,24 @@ function FileRow({ file, target, onRemove, onOpenFolder, onTrimApply, onPause, o
   );
 }
 
-function EmptyState({ onAdd }) {
+function EmptyState({ onAdd, onAddFolder }) {
   return (
     <div className="empty">
       <div className="empty-card">
         <div className="empty-ill">
-          <Icons.upload size={42} sw={1.6} />
-          <Icons.sparkle size={18} className="sparkle" style={{ top: 14, right: 18, color: "#ff9b59" }} />
-          <Icons.sparkle size={12} className="sparkle" style={{ bottom: 16, left: 20, color: "#ffc59e" }} />
+          <div className="empty-ill-ring" />
+          <Icons.film size={36} sw={1.5} />
         </div>
         <h2>Your queue is empty</h2>
-        <p>Add video files from your computer to start converting. Every common format is supported.</p>
-        <button className="btn btn-primary" style={{ margin: "0 auto", padding: "12px 22px" }} onClick={onAdd}>
-          <Icons.filePlus size={17} /> Add Files
-        </button>
+        <p>Pick individual files or an entire folder to start converting. MP4, MKV, AVI, MOV, WebM and more are all supported.</p>
+        <div className="empty-actions">
+          <button className="btn btn-primary" onClick={onAdd}>
+            <Icons.filePlus size={17} /> Add Files
+          </button>
+          <button className="btn btn-ghost" onClick={onAddFolder}>
+            <Icons.folderPlus size={17} /> Add Folder
+          </button>
+        </div>
       </div>
     </div>
   );

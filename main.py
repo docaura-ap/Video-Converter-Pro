@@ -24,7 +24,7 @@ def run_webview():
         background_color="#f5f2ee",
     )
     api.set_window(win)
-    webview.start(debug="--debug" in sys.argv, private_mode=False)
+    webview.start(debug="--debug" in sys.argv, private_mode=True)
 
 
 if __name__ == "__main__":

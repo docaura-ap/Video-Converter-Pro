@@ -284,7 +284,7 @@ function App() {
           </div>
 
           {total === 0 ? (
-            <EmptyState onAdd={addFiles} />
+            <EmptyState onAdd={addFiles} onAddFolder={addFolder} />
           ) : (
             <div className="queue-scroll">
               <div className="qlist">

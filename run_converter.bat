@@ -1,7 +1,7 @@
 @echo off
 cd /d "%~dp0"
 
-:: Create venv if it doesn't exist
+:: ── Create venv if missing ──────────────────────────────────────────────────
 if not exist "venv\Scripts\python.exe" (
     echo Creating virtual environment...
     python -m venv venv
@@ -12,7 +12,7 @@ if not exist "venv\Scripts\python.exe" (
     )
 )
 
-:: Check all required packages at once
+:: ── Install dependencies if needed ─────────────────────────────────────────
 venv\Scripts\python.exe -c "import webview" 2>nul
 if errorlevel 1 (
     echo Installing dependencies...
@@ -24,7 +24,7 @@ if errorlevel 1 (
     )
 )
 
-:: Download React/Babel for offline use if not already present
+:: ── Download frontend libraries if missing (one-time) ──────────────────────
 if not exist "frontend\lib\react.production.min.js" (
     echo Downloading frontend libraries ^(one-time setup^)...
     venv\Scripts\python.exe setup_deps.py
@@ -35,7 +35,7 @@ if not exist "frontend\lib\react.production.min.js" (
     )
 )
 
-:: Launch — prefer pythonw.exe (no console window), fall back to python.exe
+:: ── Launch app ──────────────────────────────────────────────────────────────
 if exist "venv\Scripts\pythonw.exe" (
     start "" /D "%~dp0" "venv\Scripts\pythonw.exe" main.py
 ) else (
