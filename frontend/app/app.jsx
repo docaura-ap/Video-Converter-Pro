@@ -98,6 +98,19 @@ function App() {
     return () => clearInterval(timerRef.current);
   }, [running]);
 
+  /* ── Safety net: if every file is terminal but running is still true,
+     queue_done was missed — force the state off. ── */
+  useEffect(() => {
+    if (!running || files.length === 0) return;
+    const allTerminal = files.every(
+      (f) => f.status === "done" || f.status === "error"
+    );
+    if (allTerminal) {
+      setRunning(false);
+      clearInterval(timerRef.current);
+    }
+  }, [files, running]);
+
   /* ── Derived stats ── */
   const total   = files.length;
   const done    = files.filter((f) => f.status === "done").length;
