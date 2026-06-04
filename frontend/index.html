@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Video Converter Pro</title>
+<style>
+/* Load bundled fonts from local assets — no internet required */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../assets/fonts/PlusJakartaSans/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../assets/fonts/JetBrainsMono/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 800;
+  font-display: swap;
+}
+</style>
+<link rel="stylesheet" href="app/styles.css" />
+</head>
+<body>
+<div id="root"></div>
+
+<!-- React + Babel bundled locally. Run setup_deps.py once to download them. -->
+<script src="lib/react.production.min.js"></script>
+<script src="lib/react-dom.production.min.js"></script>
+<script src="lib/babel.min.js"></script>
+
+<script type="text/babel" src="app/icons.jsx"></script>
+<script type="text/babel" src="app/data.jsx"></script>
+<script type="text/babel" src="app/components.jsx"></script>
+<script type="text/babel" src="app/modals.jsx"></script>
+<script type="text/babel" src="app/trim.jsx"></script>
+<script type="text/babel" src="app/rows.jsx"></script>
+<script type="text/babel" src="app/app.jsx"></script>
+</body>
+</html>

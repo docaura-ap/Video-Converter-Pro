@@ -1,0 +1,62 @@
+# ── Python ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+*.pyw~
+
+# ── Virtual environments ─────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ── PyInstaller build artifacts ──────────────────────────────────────────────
+build/
+dist/
+*.spec
+
+# ── FFmpeg binaries (download separately — see README) ──────────────────────
+bin/ffmpeg.exe
+bin/ffprobe.exe
+
+# ── Frontend libraries (auto-downloaded by setup_deps.py) ───────────────────
+frontend/lib/react.production.min.js
+frontend/lib/react-dom.production.min.js
+frontend/lib/babel.min.js
+
+# ── Application logs ─────────────────────────────────────────────────────────
+logs/*.log
+
+# ── Test / sample media files ────────────────────────────────────────────────
+video dataset/
+
+# ── IDE / editor ─────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*.suo
+*.user
+
+# ── Claude Code settings (local only) ────────────────────────────────────────
+.claude/
+
+# ── Windows junk ─────────────────────────────────────────────────────────────
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+ehthumbs.db
+
+# ── macOS junk ───────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ── Pytest cache ─────────────────────────────────────────────────────────────
+.pytest_cache/
+
+# ── Temporary files ──────────────────────────────────────────────────────────
+*.tmp
+*.temp
+vc_temp_*/

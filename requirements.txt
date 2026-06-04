@@ -1,0 +1,5 @@
+# Runtime dependency — pywebview wraps WebView2 (Edge) on Windows
+pywebview>=5.0
+
+# Build tool — packages the app into a standalone .exe
+pyinstaller>=6.0
